@@ -1,0 +1,4 @@
+pub enum Player -> x_or_o {
+    FirstPlayer::X
+    SecondPlayer::O
+    }    

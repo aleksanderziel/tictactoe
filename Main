@@ -1,0 +1,134 @@
+use std::io;
+use std::str::FromStr;
+use std::lib::Player;
+use std::lib::Board;
+use std::lib::State
+
+fn Start -> State {
+    State::Start(Player::FirstPlayer())    
+    }
+
+fn tic_tac_toe() -> State::NextTurn{ 
+    board();
+    next_player: FirstPlayer;
+
+    println!("Player 1 pick your spot");
+    let mut shot = FirstPlayer::new();
+
+    if shot == "a1"{
+        a1 = "o";
+    }
+
+    if shot == "a2"{
+        a2 = "o";
+    }
+
+    if shot == "a3"{
+        a3 = "o";
+    }
+
+    if shot == "b1"{
+        b1 = "o";
+    }
+
+    if shot == "b2"{
+        b2 = "o";
+    }
+
+    if shot == "b3"{
+        b3 = "o";
+    }
+
+    if shot == "c1"{
+        c1 = "o";
+    }
+
+    if shot == "c2"{
+        c2 = "o";
+    }
+
+    if shot == "c3"{
+        c3 = "o";
+    }
+
+    next_player: SecondPlayer;
+    println!("Player 2 pick your spot");
+    let mut shot = SecondPlayer::new();
+
+    if shot == "a1"{
+        a1 = "x";
+    }
+
+    if shot == "a2"{
+        a2 = "x";
+    }
+
+    if shot == "a3"{
+        a3 = "x";
+    }
+
+    if shot == "b1"{
+        b1 = "x";
+    }
+
+    if shot == "b2"{
+        b2 = "x";
+    }
+
+    if shot == "b3"{
+        b3 = "x";
+    }
+
+    if shot == "c1"{
+        c1 = "x";
+    }
+
+    if shot == "c2"{
+        c2 = "x";
+    }
+
+    if shot == "c3"{
+        c3 = "x";
+    }
+
+    //invalid move?
+    board();
+}
+
+fn Win() -> &str {
+    //check for win - A1A2A3, B1B2B3, C1C2C3, A1B1C1, A2B2C2, A3B3C3, A1B2C3, C1B2A3
+    if (a1 == "o") & (a2 == "o") & (a3 == "o") | (b1 == "o") & (b2 == "o") & (b3 == "o") 
+    | (c1 == "o") & (c2 == "o") & (c3 == "o") | (a1 == "o") & (b1 == "o") & (c1 == "o") 
+    | (a2 == "o") & (b2 == "o") & (c2 == "o") | (a3 == "o") & (b3 == "o") & (c3 == "o") 
+    | (a1 == "o") & (b2 == "o") & (c3 == "o") | (a3 == "o") & (b2 == "o") & (c1 == "o"){
+    println!{"Player 1 won"};
+    State::Win    
+    }
+
+    if (a1 == "x") & (a2 == "x") & (a3 == "x") | (b1 == "x") & (b2 == "x") & (b3 == "x") 
+    | (c1 == "x") & (c2 == "x") & (c3 == "x") | (a1 == "x") & (b1 == "x") & (c1 == "x") 
+    | (a2 == "x") & (b2 == "x") & (c2 == "x") | (a3 == "x") & (b3 == "x") & (c3 == "x") 
+    | (a1 == "x") & (b2 == "x") & (c3 == "x") | (a3 == "x") & (b2 == "x") & (c1 == "x"){
+    println!{"Player 2 won"};
+    State::Win
+    }
+
+fn Draw() -> &str{
+    if (a1 != "-") & (a2 != "-") & (a3 != "-") & (b1 != "-") & (b2 != "-") & (b3 != "-") & (c1 != "-") & (c2 != "-") & (c3 != "-"){
+        println!("There is a draw");
+    State::Draw
+    }
+}
+
+fn End() -> &str {
+    println!("Game finished");
+    State::EndGame
+}
+
+fn main(){
+    let mut state = State::Start;
+    tic_tac_toe();
+    while state != State::End {
+    break;
+}
+}

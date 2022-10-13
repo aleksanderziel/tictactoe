@@ -1,0 +1,32 @@
+pub enum board(a1: &str, a2: &str, a3: &str, b1: &str, b2: &str, b3: &str, c1: &str, c2: &str, c3: &str,) -> Board {
+    let mut a1 = "-";
+    let mut a2 = "-";
+    let mut a3 = "-";
+    let mut b1 = "-";
+    let mut b2 = "-";
+    let mut b3 = "-";
+    let mut c1 = "-";
+    let mut c2 = "-";
+    let mut c3 = "-";
+
+    fields: [
+        [a1, b1, c1],
+        [a2, b2, c2],
+        [a3, b3, c3]
+    ]
+
+    
+    println!(" |a|b|c");
+    println!("1|{a1}|{b1}|{c1}");
+    println!("2|{a2}|{b2}|{c2}");
+    println!("3|{a3}|{b3}|{c3}");
+
+    //option 2
+    hash: HashMap<Coordinates, Player>,
+
+    min_x: 3,
+    max_x: 3,
+    min_y: 3,
+    max_y: 3,
+
+}

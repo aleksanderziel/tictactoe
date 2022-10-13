@@ -1,0 +1,10 @@
+use crate::lib::Board;
+use crate::lib::Player;
+
+pub enum State {
+    Start,
+    NextTurn(Player, Board),
+    Win(Player),
+    Draw,
+    End,
+}
